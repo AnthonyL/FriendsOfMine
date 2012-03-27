@@ -10,10 +10,10 @@ class Membre {
 	
 
     static constraints = {
-		nom  blank:false
-		prenom blank:false
-		mail email:true, blank:false
-		mdp password:true, blank:false
-		naissance blank:true
+		nom (blank:false)
+		prenom (blank:false)
+		mail (email:true, blank:false)
+		mdp (password:true, blank:false)
+		naissance (blank:true, validator:{val -> return (val.getYear()+15 < new Date().getYear())})
     }
 }

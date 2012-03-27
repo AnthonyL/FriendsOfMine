@@ -34,6 +34,14 @@
 	<g:field type="password" name="mdp" required="" value="${membreInstance?.mdp}"/>
 </div>
 
+<div class="fieldcontain required">
+	<label for="mdp_confirm">
+		<g:message code="membre.mdp_confirm.label" default="Mdp_confirm" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field type="password" name="mdp_confirm" required=""/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: membreInstance, field: 'naissance', 'error')} required">
 	<label for="naissance">
 		<g:message code="membre.naissance.label" default="Naissance" />

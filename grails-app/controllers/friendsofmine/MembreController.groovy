@@ -21,10 +21,15 @@ class MembreController {
 
     def save() {
         def membreInstance = new Membre(params)
-        if (!membreInstance.save(flush: true)) {
-            render(view: "create", model: [membreInstance: membreInstance])
-            return
-        }
+		if(params.mdp.equals(params.mdp_confirm)){
+	        if (!membreInstance.save(flush: true)) {
+	            render(view: "create", model: [membreInstance: membreInstance])
+	            return
+	        }
+		} else {
+			render(view: "create", model: [membreInstance: membreInstance, errorConfirm: "error.confirmation_mdp"])
+			return
+		}
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'membre.label', default: 'Membre'), membreInstance.id])
         redirect(action: "show", id: membreInstance.id)

@@ -26,6 +26,11 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
+			<g:if test="${errorConfirm}">
+			<ul class="errors" role="alert">
+				<li><g:message code="${errorConfirm}"/></li>
+			</ul>
+			</g:if>
 			<g:form action="save" >
 				<fieldset class="form">
 					<g:render template="form"/>
