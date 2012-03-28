@@ -32,8 +32,12 @@ class MembreController {
 		}
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'membre.label', default: 'Membre'), membreInstance.id])
-        redirect(action: "show", id: membreInstance.id)
+        redirect(action: "sucess")
     }
+	
+	def sucess() {
+		
+	}
 
     def show() {
         def membreInstance = Membre.get(params.id)
