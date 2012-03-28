@@ -33,9 +33,10 @@
 			</g:if>
 			<g:form action="save" >
 				<fieldset class="form">
-					<g:render template="form"/>
+					<g:render template="form_create"/>
 				</fieldset>
 				<fieldset class="buttons">
+					<g:actionSubmit class="back" action="list" value="${message(code: 'default.button.back.label', default: 'Back')}" />
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>

@@ -27,7 +27,7 @@ class MembreController {
 	            return
 	        }
 		} else {
-			render(view: "create", model: [membreInstance: membreInstance, errorConfirm: "error.confirmation_mdp"])
+			render(view: "create", model: [membreInstance: membreInstance, errorConfirm: "membre.confirmation_mdp.error"])
 			return
 		}
 
