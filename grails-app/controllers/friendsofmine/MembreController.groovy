@@ -24,20 +24,17 @@ class MembreController {
 		}
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'membre.label', default: 'Membre'), membreInstance.id])
-        redirect(action: "sucess")
+        redirect(action: "create_sucess")
     }
 	
-	def sucess() {
-		def membreInstance = session.getAttribute("user");
-		if(!membreInstance){
-			redirect(controller:"identification", action:"home")
-		}
+	def create_sucess() {
+
 	}
 
     def show() {
 		def membreInstance = session.getAttribute("user");
 		if(!membreInstance){
-			redirect(controller:"identification", action:"home")
+			redirect(controller:"identification", action:"login")
 		}
 
         [membreInstance: membreInstance]
@@ -46,7 +43,7 @@ class MembreController {
     def edit() {
 		def membreInstance = session.getAttribute("user");
 		if(!membreInstance){
-			redirect(controller:"identification", action:"home")
+			redirect(controller:"identification", action:"login")
 		}
 
         [membreInstance: membreInstance]
@@ -55,7 +52,7 @@ class MembreController {
     def update() {
         def membreInstance = session.getAttribute("user");
 		if(!membreInstance){
-			redirect(controller:"identification", action:"home")
+			redirect(controller:"identification", action:"login")
 		}
 
         if (params.version) {
@@ -83,19 +80,23 @@ class MembreController {
     def delete() {
         def membreInstance = session.getAttribute("user");
 		if(!membreInstance){
-			redirect(controller:"identification", action:"home")
+			redirect(controller:"identification", action:"login")
 		}
 
         try {
             membreInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'membre.label', default: 'Membre'), params.id])
-            redirect(action: "list")
+            redirect(action: "delete_sucess")
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'membre.label', default: 'Membre'), params.id])
-            redirect(action: "show", id: params.id)
+            redirect(action: "show")
         }
     }
+	
+	def delete_sucess(){
+		session.invalidate()
+	}
 	
 	/*Inutilise pour le moment
 	def index() {

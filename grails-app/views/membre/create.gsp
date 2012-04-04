@@ -36,7 +36,7 @@
 					<g:render template="form_create"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="back" action="list" value="${message(code: 'default.button.back.label', default: 'Back')}" />
+					<g:link class="back" controller="identification" action="login">${message(code: 'default.button.back.label', default: 'Back')}</g:link>
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>

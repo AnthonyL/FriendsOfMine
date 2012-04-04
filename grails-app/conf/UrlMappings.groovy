@@ -7,10 +7,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(view:"/identification/login")
 		"500"(view:'/error')
-		
-		"/membre/sucess"(view:"/membre/create_sucess")
-		"/identification/index"(view:"/identification/home")
 	}
 }

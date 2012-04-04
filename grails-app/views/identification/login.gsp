@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<title><g:message code="default.home.label" default="Home" /></title>
+		<title><g:message code="default.login.label" default="Login" /></title>
 	</head>
 	<body>
 			<g:if test="${errorLogin}">

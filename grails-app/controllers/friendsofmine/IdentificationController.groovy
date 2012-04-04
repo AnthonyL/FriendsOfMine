@@ -2,7 +2,11 @@ package friendsofmine
 
 class IdentificationController {
 
-	def home(){
+	def index(){
+		redirect(action:"login")
+	}
+	
+	def login(){
 		
 	}
 	
@@ -18,9 +22,14 @@ class IdentificationController {
 			session["user"] = membreCurrant
 			redirect(controller:"membre", action:"show")
 		} else {
-			render(view:"home", model:[login:login, errorLogin:"identify.login.error"])
+			render(view:"login", model:[login:login, errorLogin:"identify.login.error"])
 		}
 		
+	}
+	
+	def logout(){
+		session.invalidate()
+		redirect(action:"login")
 	}
 	
 	def create() {

@@ -10,8 +10,8 @@
 		<div id="create-membre_sucess" class="content scaffold-create" role="main">
 			<h1><g:message code="membre.create_sucess.label" default="Create_sucess" /></h1>
 			<div>
-				<g:message code="membre.message.sucess" default="Compte créer." />
-				<g:link controller="identification" action="home"><g:message code="identify.link.label" default="identification/home" /></g:link>
+				<g:message code="membre.message.create_sucess" default="Compte créer." /><br/>
+				<g:link controller="identification" action="login"><g:message code="identify.link.label" default="identification/login" /></g:link>
 			</div>
 		</div>
 	</body>
