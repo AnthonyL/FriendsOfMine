@@ -15,8 +15,8 @@ class IdentificationController {
 		}
 		
 		if(membreCurrant){
-			//creer une session avec le membreCurrant
-			redirect(controller:"membre", action:"show", params:[id: membreCurrant.id ])
+			session["user"] = membreCurrant
+			redirect(controller:"membre", action:"show")
 		} else {
 			render(view:"home", model:[login:login, errorLogin:"identify.login.error"])
 		}

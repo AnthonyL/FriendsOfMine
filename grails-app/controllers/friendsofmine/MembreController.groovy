@@ -6,14 +6,6 @@ class MembreController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
-        redirect(action: "list", params: params)
-    }
-
-    def list() {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [membreInstanceList: Membre.list(params), membreInstanceTotal: Membre.count()]
-    }
 
     def create() {
         [membreInstance: new Membre(params)]
@@ -36,38 +28,35 @@ class MembreController {
     }
 	
 	def sucess() {
-		
+		def membreInstance = session.getAttribute("user");
+		if(!membreInstance){
+			redirect(controller:"identification", action:"home")
+		}
 	}
 
     def show() {
-        def membreInstance = Membre.get(params.id)
-        if (!membreInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'membre.label', default: 'Membre'), params.id])
-            redirect(action: "list")
-            return
-        }
+		def membreInstance = session.getAttribute("user");
+		if(!membreInstance){
+			redirect(controller:"identification", action:"home")
+		}
 
         [membreInstance: membreInstance]
     }
 
     def edit() {
-        def membreInstance = Membre.get(params.id)
-        if (!membreInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'membre.label', default: 'Membre'), params.id])
-            redirect(action: "list")
-            return
-        }
+		def membreInstance = session.getAttribute("user");
+		if(!membreInstance){
+			redirect(controller:"identification", action:"home")
+		}
 
         [membreInstance: membreInstance]
     }
 
     def update() {
-        def membreInstance = Membre.get(params.id)
-        if (!membreInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'membre.label', default: 'Membre'), params.id])
-            redirect(action: "list")
-            return
-        }
+        def membreInstance = session.getAttribute("user");
+		if(!membreInstance){
+			redirect(controller:"identification", action:"home")
+		}
 
         if (params.version) {
             def version = params.version.toLong()
@@ -92,12 +81,10 @@ class MembreController {
     }
 
     def delete() {
-        def membreInstance = Membre.get(params.id)
-        if (!membreInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'membre.label', default: 'Membre'), params.id])
-            redirect(action: "list")
-            return
-        }
+        def membreInstance = session.getAttribute("user");
+		if(!membreInstance){
+			redirect(controller:"identification", action:"home")
+		}
 
         try {
             membreInstance.delete(flush: true)
@@ -109,4 +96,14 @@ class MembreController {
             redirect(action: "show", id: params.id)
         }
     }
+	
+	/*Inutilise pour le moment
+	def index() {
+		redirect(action: "list", params: params)
+	}
+
+	def list() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[membreInstanceList: Membre.list(params), membreInstanceTotal: Membre.count()]
+	}*/
 }
