@@ -20,7 +20,8 @@ class IdentificationController {
 		
 		if(membreCurrent){
 			session["user"] = membreCurrent
-			redirect(controller:"membre", action:"show")
+			//redirect(controller:"membre", action:"show")
+                        redirect(controller:"home", action:"private_home")
 		} else {
 			render(view:"login", model:[login:login, errorLogin:"identify.login.error"])
 		}
