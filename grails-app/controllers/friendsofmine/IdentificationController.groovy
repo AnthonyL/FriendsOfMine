@@ -14,12 +14,12 @@ class IdentificationController {
 		def login = params.login
 		def pass = params.mdp
 		
-		Membre membreCurrant = Membre.find {
+		Membre membreCurrent = Membre.find {
 			(mail == login && mdp == pass)
 		}
 		
-		if(membreCurrant){
-			session["user"] = membreCurrant
+		if(membreCurrent){
+			session["user"] = membreCurrent
 			redirect(controller:"membre", action:"show")
 		} else {
 			render(view:"login", model:[login:login, errorLogin:"identify.login.error"])
