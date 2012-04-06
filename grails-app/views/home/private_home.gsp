@@ -26,7 +26,7 @@
             </g:if>
             
             <g:if test="${membreInstance?.nom}&&${membreInstance?.prenom}">
-                <span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${membreInstance}" field="prenom"/> <g:fieldValue bean="${membreInstance}" field="nom"/></span>
+                <span class="property-value" aria-labelledby="name-label"><h2><g:fieldValue bean="${membreInstance}" field="prenom"/> <g:fieldValue bean="${membreInstance}" field="nom"/></h2></span>
             </g:if>
             
             <br/>

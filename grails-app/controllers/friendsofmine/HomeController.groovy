@@ -6,10 +6,13 @@ class HomeController {
     
     def private_home() {
         def membreInstance = session.getAttribute("user");
-            if(!membreInstance){
-                    redirect(controller:"identification", action:"login")
-            }
-        def age = 25 //(new Date() - membreInstance.naissance).getYear()
+        if(!membreInstance){
+                redirect(controller:"identification", action:"login")
+        }
+			
+		int annee = new Date().getYear();
+		int anneeNaissance = membreInstance.naissance.getYear();
+        def age = annee - anneeNaissance;
         [membreInstance: membreInstance, age: age]
     }
  

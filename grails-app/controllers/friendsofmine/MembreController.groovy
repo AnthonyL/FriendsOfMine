@@ -74,7 +74,7 @@ class MembreController {
         }
 
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'membre.label', default: 'Membre'), membreInstance.id])
-        redirect(action: "show")
+        redirect(action: "edit")
     }
 
     def delete() {
