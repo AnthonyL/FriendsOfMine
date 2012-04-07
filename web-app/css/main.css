@@ -589,3 +589,7 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+.zone_content{
+	margin 1em 1.50em;
+}
