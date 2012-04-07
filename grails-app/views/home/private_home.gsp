@@ -19,20 +19,22 @@
         </div>
     
         <div id="show-membre" class="content scaffold-show" role="main">
-            <h1><g:message code="private_home.button.myAccount.label" args="[entityName]" /></h1>
+            <h1><g:message code="home.titre" /></h1>
       
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
             
-            <g:if test="${membreInstance?.nom}&&${membreInstance?.prenom}">
-                <span class="property-value" aria-labelledby="name-label"><h2><g:fieldValue bean="${membreInstance}" field="prenom"/> <g:fieldValue bean="${membreInstance}" field="nom"/></h2></span>
-            </g:if>
+            <div class="zone_content">
+	            <g:if test="${membreInstance?.nom}&&${membreInstance?.prenom}&&${age}">
+	                <h2><g:fieldValue bean="${membreInstance}" field="prenom"/> <g:fieldValue bean="${membreInstance}" field="nom"/> (<span class="property-value" aria-labelledby="age">${age} ans</span>)</h2>
+	            </g:if>
+            </div>
             
-            <br/>
-            <g:if test="${age}">
-                <span class="property-value" aria-labelledby="age">${age} ans</span>
-            </g:if>
+            <h1><g:message code="home.message.label" default="Messages"/></h1>
+            <div class="zone_content">
+            	#Zone de messages#
+            </div>
         </div>
     </body>
 </html>
