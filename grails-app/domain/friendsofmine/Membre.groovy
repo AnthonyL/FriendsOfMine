@@ -2,6 +2,7 @@ package friendsofmine
 
 class Membre {
 	
+	static searchable = true
 	String nom
 	String prenom
 	String mail

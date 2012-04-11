@@ -1,0 +1,97 @@
+#header form input {
+  padding: .1em;
+}
+
+#header .hint {
+  color: gray;
+}
+
+#header h1 a {
+  text-decoration: none;
+  font-family: Georgia, serif;
+    color: dimgray;
+}
+
+/*#header h1 {
+    letter-spacing: -0.1em;
+    float: left;
+}*/
+
+#header h1 span {
+    font-family: Georgia, serif;
+    color: #424242;
+}
+
+/*#header form {
+    margin-left: 22em;
+    padding-top: .1em;
+}*/
+
+.title {
+  margin: 1em 0;
+  padding: .3em .5em;
+  text-align: right;
+  background-color: #efefef;
+  border-top: 1px solid lightblue;
+}
+
+.result {
+  margin-bottom: 1em;
+}
+
+.result .displayLink {
+  color: green;
+}
+
+.result .name {
+  font-size: larger;
+}
+
+.paging a.step {
+  padding: 0 .3em;
+}
+
+.paging span.currentStep {
+    font-weight: bold;
+}
+
+#main ul {
+  margin: 1em 2em;
+}
+
+#main li, p {
+  margin-bottom: 1em;
+}
+
+.name a {
+	background-color: #efefef;
+	border: 0;
+	/*color: #666666;*/
+	color: black;
+	cursor: pointer;
+	display: inline-block;
+	margin: 0 0.25em 0;
+	overflow: visible;
+	padding: 0.25em 0.7em;
+	text-decoration: none;
+
+	   -moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	        border-radius: 0.3em;
+}
+
+.name a:hover, .name a:focus {
+	background-color: #999999;
+	color: #ffffff;
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	   -moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+}
+
+.no-borderradius .name a:hover, .no-borderradius .name a:focus {
+	background-color: transparent;
+	color: #444444;
+	text-decoration: underline;
+}
