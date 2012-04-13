@@ -19,10 +19,13 @@
   <body onload="focusQueryInput();">
   		<a href="#show-membre" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/home/private_home')}"><g:message code="default.home.label"/></a></li>
-			</ul>
-		</div>
+            <ul>
+            	<li><a class="home" href="${createLink(uri: '/home/private_home')}"><g:message code="default.home.label"/></a></li>
+                <li><g:link class="compte" controller="membre" action="edit"><g:message code="private_home.button.myAccount.label" default="Mon compte" /></g:link></li>
+                <li><g:link class="search" controller="searchable" action="index"><g:message code="private_home.button.search.label" default="Searchable" /></g:link></li>
+                <li><g:link class="logout" controller="identification" action="logout"><g:message code="default.button.logout.label" default="Logout" /></g:link></li>
+            </ul>
+        </div>
   <div class="zone_content">
   <div id="header">
     <h1><g:message code="search.titre" default="Searchable" /></h1>
@@ -86,10 +89,5 @@
     </g:if>
   </div>
   </div>
-  	<g:form>
-		<fieldset class="buttons">
-			<g:link class="back" controller="home" action="private_home"><g:message code="default.button.back.label" default="Back" /></g:link>
-		</fieldset>
-	</g:form>
   </body>
 </html>
