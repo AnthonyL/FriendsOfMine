@@ -34,6 +34,20 @@
             
             <h1><g:message code="home.message.label" default="Messages"/></h1>
             <div class="zone_content">
+            	<g:link controller="message" action="add"><g:message code="private_home.button.add.label" default="Add_Message" /></g:link></br>
+            	<!-- <g:if test="${addMessage}">
+            		<g:form controller="message" action="save" >
+						<fieldset class="form">
+							<g:render template="form"/>
+						</fieldset>
+						<fieldset class="buttons">
+							<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+						</fieldset>
+					</g:form>
+            	</g:if>
+            	<g:if test="${membreInstance?.messages.size() != 0}">
+            		
+            	</g:if> -->
             	#Zone de messages#
             </div>
         </div>
