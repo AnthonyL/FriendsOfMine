@@ -8,6 +8,7 @@ class Membre {
 	String mail
 	Date naissance
 	String mdp
+	static hasMany = [messages: Message]
 	
 
     static constraints = {

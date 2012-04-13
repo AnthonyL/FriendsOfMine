@@ -7,3 +7,12 @@ if (typeof jQuery !== 'undefined') {
 		});
 	})(jQuery);
 }
+
+
+function show_div(div_name) {
+	document.getElementsByName(div_name)[0].style.display = "block";
+}
+
+function hidden_div(div_name) {
+	document.getElementsByName(div_name)[0].style.display = "none";
+}
