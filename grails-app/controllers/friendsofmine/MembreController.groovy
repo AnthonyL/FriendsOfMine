@@ -108,6 +108,7 @@ class MembreController {
                                         return
                                     }
                                     membreInstance.setMdp(newMdp)
+									flash.message = message(code: 'membre.savePassword.message')
                                     redirect(controller:"membre", action:"edit")
                         }
                         else { //Erreur : le nouveau mot de passe n'a pas été confirmé
