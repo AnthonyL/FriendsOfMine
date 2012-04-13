@@ -35,7 +35,8 @@
 					<g:render template="form_edit"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.create.label', default: 'Update')}" />
+                                        <g:actionSubmit class="edit" action="modify_password" value="${message(code: 'default.button.modify_password.label', default: 'Modify_password')}" />
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'membre.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>
 			</g:form>
