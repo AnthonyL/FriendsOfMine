@@ -1,0 +1,42 @@
+.message_membre {
+	background-color: white;
+	margin: 1em 0em 0em 0em;
+	border: 1px solid #CCCCCC;
+}
+
+.message_membre h2 {
+	font-size: 1.1em
+}
+
+.message_membre p {
+	margin: 0.5em
+}
+
+.message_membre .date {
+	font-size: 0.7em
+}
+
+.message_form {
+	background-color: #efefef;
+	border: 1px solid #CCCCCC;
+
+}
+
+.message_form .form_content {
+	padding: 1em
+}
+
+.message_form textarea {
+	width: 500px;
+	height: 150px;
+	overflow: auto; /* IE always renders vertical scrollbar without this */
+	vertical-align: top;
+}
+
+.message_form .titre{
+	width: 500px;
+	height: auto;
+	overflow: auto; /* IE always renders vertical scrollbar without this */
+	vertical-align: top;
+}
+

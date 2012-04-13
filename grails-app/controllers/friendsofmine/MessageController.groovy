@@ -5,8 +5,21 @@ import org.springframework.dao.DataIntegrityViolationException
 class MessageController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+	def save() {
+		def membreInstance = session.getAttribute("user");
+		if(!membreInstance){
+			redirect(controller:"identification", action:"login")
+		}
+		
+		Membre m = Membre.findById(membreInstance.id)
+		Message messageInstance = new Message(titre: params.titre, text: params.text, dateRedaction: new Date(), redacteur: m)
+		messageInstance.save(flush: true)
+		
+		redirect(controller: "home", action: "private_home")
+	}
 
-    def index() {
+    /*def index() {
         redirect(action: "list", params: params)
     }
 
@@ -17,21 +30,6 @@ class MessageController {
 
     def create() {
         [messageInstance: new Message(params)]
-    }
-	
-	def add() {
-		redirect(controller="home" action: "private_home", addMessage: true)
-	}
-
-    def save() {
-        def messageInstance = new Message(params)
-        if (!messageInstance.save(flush: true)) {
-            render(view: "create", model: [messageInstance: messageInstance])
-            return
-        }
-
-		flash.message = message(code: 'default.created.message', args: [message(code: 'message.label', default: 'Message'), messageInstance.id])
-        redirect(action: "show", id: messageInstance.id)
     }
 
     def show() {
@@ -103,5 +101,5 @@ class MessageController {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'message.label', default: 'Message'), params.id])
             redirect(action: "show", id: params.id)
         }
-    }
+    }*/
 }

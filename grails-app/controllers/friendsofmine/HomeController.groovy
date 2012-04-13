@@ -13,7 +13,7 @@ class HomeController {
 		int annee = new Date().getYear();
 		int anneeNaissance = membreInstance.naissance.getYear();
         def age = annee - anneeNaissance;
-        [membreInstance: membreInstance, age: age]
+        [membreInstance: membreInstance, age: age, messageInstance: params.messageInstance, messageError: params.messageError]
     }
  
 }
