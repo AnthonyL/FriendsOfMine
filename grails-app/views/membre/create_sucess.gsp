@@ -9,10 +9,12 @@
 		<a href="#create-membre" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="create-membre_sucess" class="content scaffold-create" role="main">
 			<h1><g:message code="membre.create_sucess.label" default="Create_sucess" /></h1>
-			<div>
-				<g:message code="membre.message.create_sucess" default="Compte créer." /><br/>
-				<g:link controller="identification" action="login"><g:message code="identify.link.label" default="identification/login" /></g:link>
-			</div>
+			<div class="zone_content">
+				<g:message code="membre.message.create_sucess" default="Compte créer." />
+                        </div>
+                        <fieldset class="buttons">
+                          <g:link controller="identification" action="login"><g:message code="identify.link.label" default="identification/login" /></g:link>
+                        </fieldset>
 		</div>
 	</body>
 </html>

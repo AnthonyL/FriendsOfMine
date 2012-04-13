@@ -73,7 +73,7 @@ class MembreController {
             return
         }
 
-		flash.message = message(code: 'default.updated.message', args: [message(code: 'membre.label', default: 'Membre'), membreInstance.id])
+		flash.message = message(code: 'membre.updated.message')
         redirect(action: "edit")
     }
 
