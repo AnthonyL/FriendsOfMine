@@ -76,6 +76,53 @@ class MembreController {
 		flash.message = message(code: 'membre.updated.message')
         redirect(action: "edit")
     }
+    
+    def modify_password() {
+            def membreInstance = session.getAttribute("user");
+            if(!membreInstance){
+                        redirect(controller:"identification", action:"login")
+            }
+
+            [membreInstance: membreInstance]
+    }        
+    
+    def save_new_password() {
+            def membreInstance = session.getAttribute("user");
+            def oldMdp = params.oldPassword
+            def newMdp = params.newPassword
+            def confirmNewMdp = params.confirmNewPassword
+            
+            def mdp = membreInstance.mdp
+            if (oldMdp == mdp)
+            { //L'ancien mot de passe tapé est correct
+                if (oldMdp != newMdp)
+                { //Le nouveau mot de passe est différent de l'ancien
+                            
+                        if (confirmNewMdp == newMdp) 
+                        { //Le nouveau mot de passe a bien été confirmé
+                                    Membre m = Membre.findById(membreInstance.id)
+                                    m.setMdp(newMdp)
+                                    
+                                    if(!m.save(flush:true)){
+                                        render(view:"modify_password", model:[membreInstance: m])
+                                        return
+                                    }
+                                    membreInstance.setMdp(newMdp)
+									flash.message = message(code: 'membre.savePassword.message')
+                                    redirect(controller:"membre", action:"edit")
+                        }
+                        else { //Erreur : le nouveau mot de passe n'a pas été confirmé
+                                    render(view:"modify_password", model:[errorPassword:"membre.password.errorConfirmPassword"])
+                        }
+                }    
+                else { //Erreur : le nouveau mot de passe doit etre différent de l'ancien
+                            render(view:"modify_password", model:[errorPassword:"membre.password.errorNewPassword"])
+                }
+            }
+            else { //Erreur : l'ancien mot de passe tapé est incorrect
+                 render(view:"modify_password", model:[errorPassword:"membre.password.errorOldPassword"])       
+            }
+    }
 
     def delete() {
         def membreInstance = session.getAttribute("user");
