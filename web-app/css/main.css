@@ -51,6 +51,10 @@ body {
 	background-color: #abbf78;
 }
 
+#FriendsOfMineLogo {
+	background-color: #abbf78;
+}
+
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,
@@ -90,6 +94,10 @@ img {
 /* GENERAL */
 
 #grailsLogo a {
+	display: inline-block;
+	margin: 1em;
+}
+#FriendsOfMineLogo a {
 	display: inline-block;
 	margin: 1em;
 }
@@ -184,7 +192,7 @@ img {
 	text-decoration: underline;
 }
 
-.nav a.home, .nav a.list, .nav a.create {
+.nav a.home, .nav a.list, .nav a.create, .nav a.search, .nav a.logout, .nav a.compte {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -200,6 +208,18 @@ img {
 
 .nav a.create {
 	background-image: url(../images/skin/database_add.png);
+}
+
+.nav a.search {
+	background-image: url(../images/skin/search.png);
+}
+
+.nav a.logout {
+	background-image: url(../images/skin/logout.png);
+}
+
+.nav a.compte {
+	background-image: url(../images/skin/compte.png);
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
@@ -567,7 +587,7 @@ th:hover, tr:hover {
 	text-decoration: underline;
 }
 
-.buttons .delete, .buttons .edit, .buttons .save {
+.buttons .delete, .buttons .edit, .buttons .save, .buttons .back, .buttons .create {
 	background-position: 0.7em center;
 	background-repeat: no-repeat;
 	text-indent: 25px;
@@ -583,6 +603,14 @@ th:hover, tr:hover {
 
 .buttons .save {
 	background-image: url(../images/skin/database_save.png);
+}
+
+.buttons .back {
+	background-image: url(../images/skin/back.png);
+}
+
+.buttons .create {
+	background-image: url(../images/skin/database_add.png);
 }
 
 a.skip {
