@@ -24,7 +24,10 @@
 							<g:message code="identify.mdp.label" default="Mdp" />
 						</label>
 						<g:field type="password" name="mdp"/>
-						<g:submitButton name="identify" class="identify" value="${message(code: 'default.button.identify.label', default: 'Identify')}" />
+                                                <fieldset class="button_flottant" style="width: 1.3em; margin-left: 19.67em; margin-top: 1.15em">
+                                                      <g:submitButton class="identify" name="identify" value="${message(code: 'default.button.identify.label', default: 'Identify')}" />
+                                                </fieldset>
+						
 					</div>
 				</fieldset>
 				<fieldset class="buttons">

@@ -36,7 +36,7 @@
             
             <h1><g:message code="home.message.label" default="Messages"/></h1>
             <div class="zone_content">
-            	<g:actionSubmit class="buttons" value="${message(code: 'default.button.addMessage.label', default: 'Add_Message')}"  onClick="show_div('form_message')" />
+            	<g:actionSubmit class="buttons" value="${message(code: 'default.button.addMessage.label', default: 'Add_Message')}"  onClick="show_div('form_message')" style="cursor:pointer;"/>
             	<div class="message_form" name="form_message" style="display:none;">
 	            	<g:form controller="message" action="save" >
 	            		<div class="form_content" >

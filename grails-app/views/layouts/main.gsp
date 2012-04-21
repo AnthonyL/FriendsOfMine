@@ -18,7 +18,7 @@
         <r:layoutResources />
 	</head>
 	<body>
-		<div id="FriendsOfMineLogo" role="banner" align="center"><img src="${resource(dir: 'images/skin', file: 'logoFriendsOfMine.png')}" alt="FriendsOfMine" style="width: 650px; height: 150px;"/><!--style="width: 250px; height: 125px;"/>--></div>
+		<div id="FriendsOfMineLogo" role="banner" align="left"><img src="${resource(dir: 'images/skin', file: 'logoFriendsOfMine.jpg')}" alt="FriendsOfMine" style="width: 300px; height: 150px;"/><!--style="width: 250px; height: 125px;"/>--></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
