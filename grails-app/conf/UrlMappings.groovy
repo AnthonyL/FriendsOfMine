@@ -9,5 +9,6 @@ class UrlMappings {
 
 		"/"(view:"/identification/login")
 		"500"(view:'/error')
+		"/home"(view:"/home/private_home")
 	}
 }

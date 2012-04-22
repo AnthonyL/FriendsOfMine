@@ -144,14 +144,4 @@ class MembreController {
 	def delete_sucess(){
 		session.invalidate()
 	}
-	
-	/*Inutilise pour le moment
-	def index() {
-		redirect(action: "list", params: params)
-	}*/
-
-	def list() {
-		params.max = Math.min(params.max ? params.int('max') : 10, 100)
-		[membreInstanceList: Membre.list(params), membreInstanceTotal: Membre.count()]
-	}
 }

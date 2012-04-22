@@ -32,8 +32,4 @@ class IdentificationController {
 		session.invalidate()
 		redirect(action:"login")
 	}
-	
-	def create() {
-		redirect(controller:"membre", action:"create")
-	}
 }

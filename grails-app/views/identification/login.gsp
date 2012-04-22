@@ -24,14 +24,11 @@
 							<g:message code="identify.mdp.label" default="Mdp" />
 						</label>
 						<g:field type="password" name="mdp"/>
-                                                <fieldset class="button_flottant" style="width: 1.3em; margin-left: 19.67em; margin-top: 1.15em">
-                                                      <g:submitButton class="identify" name="identify" value="${message(code: 'default.button.identify.label', default: 'Identify')}" />
-                                                </fieldset>
-						
+                        <g:submitButton class="identify" name="identify" value="${message(code: 'default.button.identify.label', default: 'Identify')}" />
 					</div>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:actionSubmit class="create" action="create" value="${message(code: 'default.button.create_compte.label', default: 'Membre_create')}" />
+					<g:link class="create" controller="membre" action="create" ><g:message code="default.button.create_compte.label" default="Membre_create" /></g:link>
 				</fieldset>
 			</g:form>
 		</div>
